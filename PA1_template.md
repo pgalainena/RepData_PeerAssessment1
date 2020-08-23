@@ -6,6 +6,7 @@ output:
 ---
 
 
+
 ## Loading and preprocessing the data
 
 The data should be loaded and preprocessed to transform it into a suitable format for the analysis.
@@ -48,7 +49,7 @@ data_by_date<-aggregate(steps ~ date, data, sum)
 hist(data_by_date$steps, main="Mean total number of steps taken per day", xlab="Total steps per day", breaks = 30)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](figs/fig-unnamed-chunk-2-1.png)<!-- -->
 
 Now, the mean and median number of steps taken each day are calculated.
 
@@ -77,7 +78,7 @@ data_by_interval<-aggregate(steps ~ interval, data, mean)
 plot(data_by_interval$interval, data_by_interval$steps, type="l", xlab ="Interval", ylab = "Number of steps", main="Average of steps taken during five minute intervals")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](figs/fig-unnamed-chunk-4-1.png)<!-- -->
 
 The 5-minute interval that, on average, contains the maximum number of steps is the following one:
 
@@ -101,13 +102,13 @@ new_data_by_interval<-aggregate(steps ~ interval, new_data, mean)
 hist(data_by_date$steps, main="Mean total number of steps taken per day", xlab="Total steps per day", breaks = 30, col = "green")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](figs/fig-unnamed-chunk-6-1.png)<!-- -->
 
 ```r
 plot(new_data_by_interval$interval, data_by_interval$steps, type="l", xlab ="Interval", ylab = "Number of steps", main="Average of steps taken during five minute intervals", col="green")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-2.png)<!-- -->
+![](figs/fig-unnamed-chunk-6-2.png)<!-- -->
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -152,4 +153,4 @@ plot(weekday_data_by_interval$interval, weekday_data_by_interval$steps, type="l"
 plot(weekend_data_by_interval$interval, weekend_data_by_interval$steps, type="l", xlab ="Interval", ylab = "Number of steps", main="Average of steps taken during five minute intervals at the weekend")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](figs/fig-unnamed-chunk-8-1.png)<!-- -->
