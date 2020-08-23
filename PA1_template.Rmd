@@ -10,6 +10,7 @@ output:
 
 The data should be loaded and preprocessed to transform it into a suitable format for the analysis.
 ```{r, echo=TRUE}
+unzip("./activity.zip")
 data<-read.csv("./activity.csv")
 head(data)
 data$date <- as.Date(data$date, "%Y-%m-%d")
